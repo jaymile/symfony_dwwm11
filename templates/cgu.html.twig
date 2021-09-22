@@ -1,0 +1,28 @@
+{% extends('base.html.twig') %}
+
+{% block body %}
+    <h1>
+        Conditions Générales d'Utilisation
+    </h1>
+
+    {% for i in 1..15 %}
+    <h2>
+        {{ i }}
+        . Lorem ipsum dolor sit amet.
+    </h2>
+    <p>
+        <span>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates corporis debitis aperiam, amet aliquid dignissimos molestias officia, dicta maiores dolorem, architecto omnis dolores quod tenetur quia? Ipsam tempore sapiente qui.
+            
+        </span>
+        <span>
+            Debitis, nulla. Adipisci, incidunt. Quam commodi blanditiis ipsum molestiae error cum odio corporis deleniti repellat ullam. Eum earum praesentium voluptatem dolor, quae modi sint quidem cumque ut, libero saepe tempore?
+            
+        </span>
+        <span>
+            Quos magnam possimus at! Vero eos explicabo aut aliquam nisi suscipit expedita mollitia necessitatibus architecto fugit, tempore quasi eligendi nostrum, cum animi rem assumenda molestiae? In vero sapiente perspiciatis tempora.
+            
+        </span>
+    </p>
+    {% endfor %}
+{% endblock %}

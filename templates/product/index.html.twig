@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les produits{% endblock %}
+
+{% block body %}
+
+<div class="row">
+    {% for un_produit in produits %}
+    <div class="card text-left col-4">
+        <img class="card-img-top" src="{{un_produit.photoPrincipale}}">
+        <div class="card-body">
+            <h4 class="card-title">
+                <a href="{{ path('one_product', { id: un_produit.id }) }}">
+                    {{ un_produit.label }}
+                </a>
+            </h4>
+            <p class="card-text">{{ un_produit.prix }} €</p>
+            <p class="card-text">Vendu par {{ un_produit.vendeur.pseudo }}</p>
+            <p class="card-text">
+                <a class="btn btn-warning" href="{{ path('update_product', { id: un_produit.id }) }}">Modifier</a>
+                <a class="btn btn-danger" href="{{ path('delete_product', { id: un_produit.id }) }}"
+                    onclick="return confirm('Êtes-vous sûr ?')" class="mx-2">Supprimer</a>
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

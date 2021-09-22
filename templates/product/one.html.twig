@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{produit.label}}{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+		<div class="card text-left col-4">
+			<img class="card-img-top" src="{{produit.photoPrincipale}}">
+			<div class="card-body">
+				<h4 class="card-title">{{produit.label}}</h4>
+				<p class="card-text">{{produit.prix}} €</p>
+			</div>
+		</div>
+		
+		<div class="col-8">
+			{{produit.description}}
+		</div>
+    </div>
+
+{% endblock %}

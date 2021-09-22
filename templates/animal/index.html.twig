@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les animaux{% endblock %}
+
+{% block body %}
+
+	<a class="btn btn-success" href="{{ path('create_animal') }}"> 
+		<i class="fa fa-plus mr-2" aria-hidden="true"></i>
+		Ajouter un animal
+	</a>
+
+	{% for animal in pets %}
+		<p>
+			{{ animal.nom }} : petit être né le {{ animal.dateNaissance.format('d/m/Y') }} et
+			{{ animal.isSterilise ? 'stérilisé' : 'avec ses organes génitaux' }}
+
+			<a class="btn btn-warning" 
+			href="{{ path('update_animal', { id: animal.id }) }}">
+				<i class="fa fa-edit" aria-hidden="true"></i>
+			</a>
+			<a class="btn btn-danger" 
+			href="{{ path('delete_animal', { id: animal.id }) }}">
+				<i class="fa fa-trash" aria-hidden="true"></i>
+			</a>
+		</p>
+	{% else %}
+		<p>Nous n'avons aucun animal pour le moment.</p>
+	{% endfor %}
+
+{% endblock %}
